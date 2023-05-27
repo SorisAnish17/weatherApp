@@ -71,7 +71,8 @@ async function weatherFetch(url) {
     let windSpeed = res.wind.speed;
     wind.innerHTML = `<p class="fa-solid fa-wind">Wind-Speed:${windSpeed}Km/hr</p>`;
   } catch (error) {
-    console.log("error"); let comman = document.querySelectorAll(".comman");
+    console.log("error");
+    let comman = document.querySelectorAll(".comman");
     for (let invalid of comman) {
       invalid.style.display = "none";
       let errorMsg = document.querySelector("#error-msg");
