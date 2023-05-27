@@ -30,9 +30,7 @@ async function weatherFetch(url) {
     let twoDigit = celsius.toString().slice(0, 2);
     if (celsius) {
       temp.innerHTML = `${twoDigit}<sup>o</sup>C`;
-    } else {
-      temp.textContent = "City not Found";
-    }
+    } 
     let climate = document.querySelector("#climate");
     let weatherArray = res.weather;
     let resultMain = weatherArray.map((value) => {
@@ -72,6 +70,11 @@ async function weatherFetch(url) {
     let windSpeed = res.wind.speed;
     wind.innerHTML = `<p class="fa-solid fa-wind">Wind-Speed:${windSpeed}Km/hr</p>`;
   } catch (error) {
-    console.log("error");
+    console.log("error"); let comman = document.querySelectorAll(".comman");
+    for (let invalid of comman) {
+      invalid.style.display = "none";
+      let errorMsg = document.querySelector("#error-msg");
+      errorMsg.textContent = "City Not Found";
+    }
   }
 }
