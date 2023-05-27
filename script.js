@@ -30,7 +30,8 @@ async function weatherFetch(url) {
     let twoDigit = celsius.toString().slice(0, 2);
     if (celsius) {
       temp.innerHTML = `${twoDigit}<sup>o</sup>C`;
-    } 
+    }else{
+      temp.textContent="City Not Found";
     let climate = document.querySelector("#climate");
     let weatherArray = res.weather;
     let resultMain = weatherArray.map((value) => {
